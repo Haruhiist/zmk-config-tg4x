@@ -28,19 +28,19 @@
 
         default_layer {
             bindings = <
-  &kp ESC         &kp Q         &kp W        &kp E  &kp R  &kp T        &kp Y  &kp U          &kp I          &kp O     &kp P  &kp DELETE  &kp BSPC
-  &kp TAB         &kp A         &kp S        &kp D  &kp F  &kp G        &kp H  &kp J          &kp K          &kp L  &kp SEMI     &kp RET
-&kp LSHFT         &kp Z         &kp X        &kp C  &kp V  &kp B        &kp N  &kp M      &kp COMMA        &kp DOT  &kp FSLH       &mo 1
-&kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE                &lt 3 SPACE         &kp RIGHT_GUI  &kp RIGHT_ALT     &mo 4   &kp RCTRL
+  &kp ESC         &kp Q         &kp W        &kp E  &kp R  &kp T        &kp Y  &kp U          &kp I          &kp O     &kp P       &kp DELETE  &kp BSPC
+  &kp TAB         &kp A         &kp S        &kp D  &kp F  &kp G        &kp H  &kp J          &kp K          &kp L  &kp SEMI          &kp RET
+&kp LSHFT         &kp Z         &kp X        &kp C  &kp V  &kp B        &kp N  &kp M      &kp COMMA        &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+&kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE                &lt 1 SPACE         &kp RIGHT_GUI  &kp RIGHT_ALT     &mo 3        &kp RCTRL
             >;
         };
 
         nums_fs {
             bindings = <
-   &kp GRAVE        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5           &kp F6        &kp F7            &kp F8             &kp F9    &kp F10    &kp F11  &kp F12
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6     &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0  &kp MINUS  &kp EQUAL
-      &trans       &kp END     &kp PG_DN        &trans        &trans        &trans  &kp NON_US_HASH       &kp SQT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &kp NUBS     &trans
-      &trans        &trans        &trans        &trans                                       &trans                          &trans           &kp LEFT   &kp DOWN  &kp RIGHT
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5           &kp F6   &kp F7            &kp F8             &kp F9   &kp F10    &kp F11  &kp F12
+&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5           &kp N6   &kp N7            &kp N8             &kp N9    &kp N0  &kp MINUS
+    &none   &none   &none   &none   &none   &none  &kp NON_US_HASH  &kp SQT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUBS      &none
+    &none   &none   &none   &none                            &none                      &none              &none     &none      &none
             >;
 
             label = "nums_fs";
@@ -48,10 +48,10 @@
 
         other_layer {
             bindings = <
-&kp PRINTSCREEN  &kp C_VOLUME_DOWN      &kp C_VOL_UP    &kp K_MUTE        &trans  &trans  &trans    &trans                    &kp UP        &kp F9       &kp F10          &kp F11  &kp F12
-       &kp CAPS         &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT        &trans  &trans  &trans  &kp LEFT                  &kp DOWN     &kp RIGHT        &trans  &rgb_ug RGB_TOG
-         &trans         &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans    &trans  &kp LG(LC(LS(NUMBER_4)))        &trans        &trans           &trans
-         &trans             &trans            &trans        &trans                        &trans                              &trans  &kp C_VOL_UP  &kp C_VOL_DN         &kp C_PP
+   &none  &kp C_VOLUME_DOWN      &kp C_VOL_UP    &kp K_MUTE         &none  &none  &none     &none                    &kp UP      &none  &none  &none  &none
+&kp CAPS         &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT         &none  &none  &none  &kp LEFT                  &kp DOWN  &kp RIGHT  &none  &none
+   &none         &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none     &none  &kp LG(LC(LS(NUMBER_4)))      &none  &none  &none
+   &none              &none             &none         &none                       &none                               &none      &none  &none  &none
             >;
         };
 
@@ -59,7 +59,7 @@
             bindings = <
 &none  &none  &none  &none  &none  &none  &none  &kp LC(LA(LG(LEFT)))      &kp LA(LC(ENTER))  &kp LC(LA(LG(RIGHT)))  &kp LG(EQUAL)  &none  &none
 &none  &none  &none  &none  &none  &none  &none      &kp LA(LC(LEFT))  &kp LA(LC(BACKSPACE))      &kp LA(LC(RIGHT))  &kp LG(MINUS)  &none
-&none  &none  &none  &none  &none  &none  &none                 &none          &kp LA(LC(C))                  &none          &none  &none
+&none  &none  &none  &none  &none  &none  &none                 &none          &kp LA(LC(C))                  &none          &none  &mo 4
 &none  &none  &none  &none                &none                                        &none                  &none          &none  &none
             >;
 
@@ -68,10 +68,10 @@
 
         rgb {
             bindings = <
-&none            &none            &none            &none            &none            &none            &none  &none            &none            &none            &none  &none  &none
-&none            &none            &none            &none            &none            &none            &none  &none            &none            &none            &none  &none
-&none  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &none
-&none            &none            &none  &rgb_ug RGB_SPD                                    &rgb_ug RGB_SPI                   &none            &none            &none  &none
+&none            &none            &none            &none            &none  &none  &none  &none            &none            &none            &none  &none  &none
+&none  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &none  &none  &none            &none            &none            &none  &none
+&none  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &none  &none  &none  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &none
+&none            &none            &none            &none                          &none                   &none            &none            &none  &none
             >;
         };
     };
