@@ -43,16 +43,18 @@
    &trans           &trans             &trans    &trans                                    &trans                           &trans                &trans                  &none     &trans
             >;
 
-            label = "nums_fs";
+            label = "Numbers";
         };
 
-        other_layer {
+        navi {
             bindings = <
-   &none  &kp C_VOLUME_DOWN      &kp C_VOL_UP    &kp K_MUTE         &none  &none  &none           &none                    &kp UP      &none  &none  &none  &none
-&kp CAPS         &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT         &none  &none  &none        &kp LEFT                  &kp DOWN  &kp RIGHT  &none  &none
-   &none         &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none  &kp LG(LS(N4))  &kp LG(LC(LS(NUMBER_4)))      &none  &none  &none
-   &none              &none             &none         &none                       &none                                     &none      &none  &none  &none
+   &none  &kp C_VOLUME_DOWN      &kp C_VOL_UP    &kp K_MUTE         &none  &none  &none           &none                    &kp UP      &none  &none   &none  &none
+&kp CAPS         &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT         &none  &none  &none        &kp LEFT                  &kp DOWN  &kp RIGHT  &none   &none
+  &trans         &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none  &kp LG(LS(N4))  &kp LG(LC(LS(NUMBER_4)))      &none  &none  &trans
+  &trans             &trans            &trans         &none                       &none                                    &trans     &trans  &none  &trans
             >;
+
+            label = "Navigation";
         };
 
         tiling {
