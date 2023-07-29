@@ -29,22 +29,22 @@
 
         lbrkt {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <4 5>;
+            key-positions = <4 3>;
         };
 
         rbrkt {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
         };
 
         quot {
             bindings = <&kp SQT>;
-            key-positions = <17 18>;
+            key-positions = <17 16>;
         };
 
         nubs {
             bindings = <&kp NON_US_BACKSLASH>;
-            key-positions = <19 20>;
+            key-positions = <20 21>;
         };
 
         nuhs {
