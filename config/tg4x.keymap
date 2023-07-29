@@ -49,7 +49,7 @@
 
         nuhs {
             bindings = <&kp NUHS>;
-            key-positions = <30 31>;
+            key-positions = <34 35>;
         };
     };
 
