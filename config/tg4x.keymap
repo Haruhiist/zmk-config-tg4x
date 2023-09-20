@@ -58,19 +58,19 @@
 
         default_layer {
             bindings = <
-                     &kp ESC         &kp Q         &kp W        &kp E  &kp R  &kp T        &kp Y  &kp U          &kp I          &kp O     &kp P    &kp LA(SPACE)  &kp BSPC
-&mt LC(LA(LS(LEFT_GUI))) TAB         &kp A         &kp S        &kp D  &kp F  &kp G        &kp H  &kp J          &kp K          &kp L  &kp SEMI          &kp RET
-                   &kp LSHFT         &kp Z         &kp X        &kp C  &kp V  &kp B        &kp N  &kp M      &kp COMMA        &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                   &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE                &lt 1 SPACE         &kp RIGHT_GUI  &kp RIGHT_ALT     &mo 3        &kp RCTRL
+&kp ESC                       &kp Q         &kp W         &kp E        &kp R  &kp T  &kp Y        &kp U  &kp I          &kp O          &kp P     &kp LA(SPACE)    &kp BSPC
+&mt LC(LA(LS(LEFT_GUI))) TAB  &kp A         &kp S         &kp D        &kp F  &kp G  &kp H        &kp J  &kp K          &kp L          &kp SEMI  &kp RET
+&kp LSHFT                     &kp Z         &kp X         &kp C        &kp V  &kp B  &kp N        &kp M  &kp COMMA      &kp DOT        &kp FSLH  &kp RIGHT_SHIFT
+&kp LCTRL                     &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE                &lt 1 SPACE         &kp RIGHT_GUI  &sk RIGHT_ALT  &mo 3     &kp RCTRL
             >;
         };
 
         nums_fs {
             bindings = <
- &kp PLUS  &kp EXCLAMATION     &kp AT   &kp HASH  &kp DOLLAR  &kp PERCENT        &kp CARET  &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER  &kp DELETE
-&kp EQUAL           &kp N1     &kp N2     &kp N3      &kp N4       &kp N5           &kp N6         &kp N7            &kp N8                &kp N9                 &kp N0  &kp MINUS
-   &trans        &kp GRAVE  &kp TILDE  &kp COMMA     &kp DOT        &none  &kp NON_US_HASH        &kp SQT  &kp LEFT_BRACKET     &kp RIGHT_BRACKET               &kp NUBS     &trans
-   &trans           &trans     &trans     &trans                                    &trans                           &trans                &trans                  &none     &trans
+&kp PLUS   &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT  &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER  &kp DELETE
+&kp EQUAL  &kp N1           &kp N2     &kp N3     &kp N4      &kp N5       &kp N6           &kp N7         &kp N8            &kp N9                &kp N0                 &kp MINUS
+&trans     &kp GRAVE        &kp TILDE  &kp COMMA  &kp DOT     &none        &kp NON_US_HASH  &kp SQT        &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp NUBS               &trans
+&trans     &trans           &trans     &trans                              &trans                          &trans            &trans                &none                  &trans
             >;
 
             label = "Numbers";
@@ -78,10 +78,10 @@
 
         navi {
             bindings = <
-   &none  &kp C_VOLUME_DOWN      &kp C_VOL_UP  &kp K_MUTE  &kp LG(LA(N))  &none  &none   &kp LG(LEFT)    &kp UP  &kp LC(LEFT_ARROW)  &none  &kp LG(LS(N4))  &kp LG(LC(LS(N4)))
-&kp CAPS         &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LG(LS(N))  &none  &none       &kp LEFT  &kp DOWN           &kp RIGHT  &none           &none
-  &trans         &kp LC(N1)        &kp LC(N2)  &kp LC(N3)     &kp LC(N4)  &none  &none  &kp LG(RIGHT)     &none       &kp LC(RIGHT)  &none          &trans
-  &trans             &trans            &trans       &none                        &none                   &trans              &trans  &none          &trans
+&none     &kp C_VOLUME_DOWN  &kp C_VOL_UP      &kp K_MUTE  &kp LG(LA(N))  &none  &none  &kp LG(LEFT)   &kp UP    &kp LC(LEFT_ARROW)  &none  &kp LG(LS(N4))  &kp LG(LC(LS(N4)))
+&kp CAPS  &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LG(LS(N))  &none  &none  &kp LEFT       &kp DOWN  &kp RIGHT           &none  &none
+&trans    &kp LC(N1)         &kp LC(N2)        &kp LC(N3)  &kp LC(N4)     &none  &none  &kp LG(RIGHT)  &none     &kp LC(RIGHT)       &none  &trans
+&trans    &trans             &trans            &none                             &none                 &trans    &trans              &none  &trans
             >;
 
             label = "Navigation";
@@ -89,10 +89,10 @@
 
         tiling {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none  &none  &kp LC(LA(LG(LEFT)))      &kp LA(LC(ENTER))  &kp LC(LA(LG(RIGHT)))  &kp LG(EQUAL)  &none  &none
-&none    &bt BT_CLR  &out OUT_TOG         &none         &none  &none  &none      &kp LA(LC(LEFT))  &kp LA(LC(BACKSPACE))      &kp LA(LC(RIGHT))  &kp LG(MINUS)  &none
-&none         &none         &none         &none         &none  &none  &none                 &none          &kp LA(LC(C))                  &none          &none  &mo 4
-&none         &none         &none         &none                       &none                                        &none                  &none          &none  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none  &none  &kp LC(LA(LG(LEFT)))  &kp LA(LC(ENTER))      &kp LC(LA(LG(RIGHT)))  &kp LG(EQUAL)  &none  &none
+&none  &bt BT_CLR    &out OUT_TOG  &none         &none         &none  &none  &kp LA(LC(LEFT))      &kp LA(LC(BACKSPACE))  &kp LA(LC(RIGHT))      &kp LG(MINUS)  &none
+&none  &none         &none         &none         &none         &none  &none  &none                 &kp LA(LC(C))          &none                  &none          &mo 4
+&none  &none         &none         &none                              &none                        &none                  &none                  &none          &none
             >;
 
             label = "tiling";
@@ -100,10 +100,10 @@
 
         rgb {
             bindings = <
-&none            &none            &none            &none       &sys_reset        &none  &none  &none            &none            &none            &none  &none  &none
-&none  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI        &none  &none  &none            &none            &none            &none  &none
+&none  &none            &none            &none            &sys_reset       &none        &none  &none  &none            &none            &none            &none  &none
+&none  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &none        &none  &none  &none            &none            &none            &none
 &none  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader  &none  &none  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &none
-&none            &none            &none            &none                                &none                   &none            &none            &none  &none
+&none  &none            &none            &none                                          &none         &none            &none            &none            &none
             >;
         };
     };
