@@ -18,25 +18,21 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
         };
+
         td_prev_dt: td_prev_dt {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_PREV_DT";
             #binding-cells = <0>;
-            bindings =
-                <&kp LEFT_SHIFT>,
-                <&kp LC(LEFT)>;
+            bindings = <&kp LEFT_SHIFT>, <&kp LC(LEFT)>;
         };
+
         td_next_dt: td_next_dt {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_NEXT_DT";
             #binding-cells = <0>;
-            bindings =
-                <&kp RIGHT_SHIFT>,
-                <&kp LC(RIGHT)>;
+            bindings = <&kp RIGHT_SHIFT>, <&kp LC(RIGHT)>;
         };
     };
 
@@ -74,10 +70,10 @@
 
         default_layer {
             bindings = <
-&kp ESC                       &kp Q         &kp W         &kp E        &kp R  &kp T  &kp Y        &kp U  &kp I          &kp O          &kp P     &kp LA(SPACE)        &kp BSPC
-&mt LC(LA(LS(LEFT_GUI))) TAB  &kp A         &kp S         &kp D        &kp F  &kp G  &kp H        &kp J  &kp K          &kp L          &kp SEMI  &mt RIGHT_ALT ENTER
-&td_prev_dt                   &kp Z         &kp X         &kp C        &kp V  &kp B  &kp N        &kp M  &kp COMMA      &kp DOT        &kp FSLH  &td_next_dt
-&kp LCTRL                     &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE                &lt 1 SPACE         &kp RIGHT_GUI  &kp RIGHT_ALT  &mo 3     &kp RCTRL
+&kp ESC        &kp Q         &kp W         &kp E        &kp R  &kp T  &kp Y        &kp U  &kp I          &kp O          &kp P     &mt LC(LA(LS(LGUI))) LA(SPACE)  &kp BSPC
+&mt LCTRL TAB  &kp A         &kp S         &kp D        &kp F  &kp G  &kp H        &kp J  &kp K          &kp L          &kp SEMI  &mt RIGHT_ALT ENTER
+&td_prev_dt    &kp Z         &kp X         &kp C        &kp V  &kp B  &kp N        &kp M  &kp COMMA      &kp DOT        &kp FSLH  &td_next_dt
+&kp LCTRL      &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE                &lt 1 SPACE         &kp RIGHT_GUI  &kp RIGHT_ALT  &mo 3     &kp RCTRL
             >;
         };
 
@@ -124,7 +120,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
