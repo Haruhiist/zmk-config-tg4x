@@ -63,21 +63,58 @@
             bindings = <&kp NUHS>;
             key-positions = <20 21>;
         };
+
+        grv {
+            bindings = <&kp GRAVE>;
+            key-positions = <1 0>;
+        };
+    };
+
+    macros {
+        bt_macro_mac: bt_macro_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 0>;
+            label = "BT_MACRO_MAC";
+        };
+
+        bt_macro_sd: bt_macro_sd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 4 &bt BT_SEL 1>;
+            label = "BT_MACRO_SD";
+        };
+
+        bt_macro_win: bt_macro_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 4 &bt BT_SEL 3>;
+            label = "BT_MACRO_WIN";
+        };
+
+        bt_macro_work_mac: bt_macro_work_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 2>;
+            label = "BT_MACRO_WORK_MAC";
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        mac_base {
             bindings = <
 &kp ESC        &kp Q         &kp W         &kp E        &kp R  &kp T  &kp Y        &kp U  &kp I          &kp O          &kp P     &mt LC(LA(LS(LGUI))) LA(SPACE)  &kp BSPC
 &mt LCTRL TAB  &kp A         &kp S         &kp D        &kp F  &kp G  &kp H        &kp J  &kp K          &kp L          &kp SEMI  &mt RIGHT_ALT ENTER
 &td_prev_dt    &kp Z         &kp X         &kp C        &kp V  &kp B  &kp N        &kp M  &kp COMMA      &kp DOT        &kp FSLH  &td_next_dt
 &kp LCTRL      &kp LEFT_ALT  &kp LEFT_GUI  &lt 2 SPACE                &lt 1 SPACE         &kp RIGHT_GUI  &kp RIGHT_ALT  &mo 3     &kp RCTRL
             >;
+
+            label = "Mac Base Layer";
         };
 
-        nums_fs {
+        mac_nums {
             bindings = <
 &kp PLUS   &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER  &kp DELETE
 &kp EQUAL  &kp N1           &kp N2     &kp N3     &kp N4      &kp N5       &kp N6     &kp N7         &kp N8            &kp N9                &kp N0                 &kp MINUS
@@ -85,10 +122,10 @@
 &trans     &trans           &trans     &trans                              &trans                    &trans            &trans                &none                  &trans
             >;
 
-            label = "Numbers";
+            label = "Mac Numbers";
         };
 
-        navi {
+        mac_navi {
             bindings = <
 &none     &kp C_VOLUME_DOWN  &kp C_VOL_UP      &kp K_MUTE  &kp LG(LA(N))  &none  &none  &kp LG(LEFT)        &kp UP    &kp LG(RIGHT_ARROW)  &none  &kp LG(LS(N4))  &kp LG(LC(LS(N4)))
 &kp CAPS  &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LG(LS(N))  &none  &none  &kp LEFT            &kp DOWN  &kp RIGHT            &none  &none
@@ -96,18 +133,59 @@
 &trans    &trans             &trans            &none                             &none                      &trans    &trans               &none  &trans
             >;
 
-            label = "Navigation";
+            label = "Mac Navigation";
         };
 
-        tiling {
+        mac_tiling {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &none  &none  &kp LC(LA(LG(LEFT)))  &kp LA(LC(ENTER))      &kp LC(LA(LG(RIGHT)))  &kp LG(EQUAL)  &none  &none
-&none  &bt BT_CLR    &out OUT_TOG  &none         &kp LG(LC(F))  &none  &none  &kp LA(LC(LEFT))      &kp LA(LC(BACKSPACE))  &kp LA(LC(RIGHT))      &kp LG(MINUS)  &none
-&none  &none         &none         &none         &none          &none  &none  &none                 &kp LC(LA(C))          &none                  &none          &mo 4
-&none  &none         &none         &none                               &none                        &none                  &none                  &none          &none
+&none  &bt_macro_mac  &bt_macro_sd  &bt_macro_work_mac  &bt_macro_win  &none  &none  &kp LC(LA(LG(LEFT)))  &kp LA(LC(ENTER))      &kp LC(LA(LG(RIGHT)))  &kp LG(EQUAL)  &none  &none
+&none  &bt BT_CLR     &out OUT_TOG  &none               &kp LG(LC(F))  &none  &none  &kp LA(LC(LEFT))      &kp LA(LC(BACKSPACE))  &kp LA(LC(RIGHT))      &kp LG(MINUS)  &none
+&none  &none          &none         &none               &none          &none  &none  &none                 &kp LC(LA(C))          &none                  &none          &mo 8
+&none  &none          &none         &none                                     &none                        &none                  &none                  &none          &none
             >;
 
-            label = "tiling";
+            label = "Mac Tiling";
+        };
+
+        win_base {
+            bindings = <
+&kp ESC         &kp Q         &kp W         &kp E        &kp R  &kp T  &kp Y        &kp U  &kp I          &kp O          &kp P     &kp LA(SPACE)        &kp BSPC
+&mt LCTRL TAB   &kp A         &kp S         &kp D        &kp F  &kp G  &kp H        &kp J  &kp K          &kp L          &kp SEMI  &mt RIGHT_ALT ENTER
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C        &kp V  &kp B  &kp N        &kp M  &kp COMMA      &kp DOT        &kp FSLH  &kp RIGHT_SHIFT
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE                &lt 5 SPACE         &kp RIGHT_ALT  &kp RIGHT_WIN  &mo 7     &kp RCTRL
+            >;
+
+            label = "Win Base Layer";
+        };
+
+        win_nums {
+            label = "Win Numbers";
+            bindings = <
+&kp PLUS   &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER  &kp DELETE
+&kp EQUAL  &kp N1           &kp N2     &kp N3     &kp N4      &kp N5       &kp N6     &kp N7         &kp N8            &kp N9                &kp N0                 &kp MINUS
+&trans     &kp GRAVE        &kp TILDE  &kp COMMA  &kp DOT     &kp F2       &kp F5     &kp F9         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp F11                &trans
+&trans     &trans           &trans     &trans                              &trans                    &trans            &trans                &none                  &trans
+            >;
+        };
+
+        win_navi {
+            label = "Win Navigation";
+            bindings = <
+&none     &kp C_VOLUME_DOWN  &kp C_VOL_UP      &kp K_MUTE  &kp LG(C)      &none  &none  &kp HOME            &kp UP    &kp LG(END)    &none  &none   &kp LG(LS(S))
+&kp CAPS  &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LS(LC(N))  &none  &none  &kp LEFT            &kp DOWN  &kp RIGHT      &none  &none
+&trans    &kp LC(N1)         &kp LC(N2)        &kp LC(N3)  &kp LC(N4)     &none  &none  &kp LC(LEFT_ARROW)  &none     &kp LC(RIGHT)  &none  &trans
+&trans    &trans             &trans            &none                             &none                      &trans    &trans         &none  &trans
+            >;
+        };
+
+        win_tiling {
+            label = "Win Tiling";
+            bindings = <
+&none  &bt_macro_mac  &bt_macro_sd  &bt_macro_work_mac  &bt_macro_win       &none  &none  &kp LG(LS(LEFT))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT))  &kp LC(EQUAL)  &none  &none
+&none  &bt BT_CLR     &out OUT_TOG  &none               &kp LC(LS(ESCAPE))  &none  &none  &kp LG(LEFT)      &kp LG(DOWN)      &kp LG(RIGHT)      &kp LC(MINUS)  &none
+&none  &none          &none         &none               &none               &none  &none  &none             &none             &none              &none          &mo 8
+&none  &none          &none         &none                                          &none                    &none             &none              &none          &none
+            >;
         };
 
         rgb {
